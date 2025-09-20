@@ -1,0 +1,12 @@
+{
+  "students": [
+    {
+      "username": "Hars",
+      "mobilenumber": "9876543210",
+      "email": "abc@gmail.com",
+      "dateOfBirth": "1200-12-09",
+      "salary": "12000",
+      "id": "a864"
+    }
+  ]
+}

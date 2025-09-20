@@ -1,0 +1,85 @@
+<form [formGroup]="fg" (ngSubmit)="updateData()">
+    <div>
+        <label>Username: </label><br>
+        <input type="text" formControlName="username" placeholder="Enter Name"/>
+        <div *ngIf="fg.get('username')?.['invalid'] &&(fg.get('username')?.['dirty']||fg.get('username')?.['touched'])">
+            <small *ngIf="fg.get('username')?.errors?.['required']">
+                Username is required !
+            </small>
+            <small *ngIf="fg.get('username')?.errors?.['pattern']">
+                Username should be valid!
+            </small>
+            <!-- <small *ngIf="fg.get('username')?.errors?.['minlength']">
+                Username should be of at lesat 4 characters!
+            </small> -->
+        </div>
+    </div>
+    <br>
+
+
+    <div>
+        <label>Mobile No. : </label><br>
+        <input type="text" formControlName="mobilenumber" placeholder="Enter Mobile No."/>
+        <div *ngIf="fg.get('mobilenumber')?.['invalid'] &&(fg.get('mobilenumber')?.['dirty']||fg.get('mobilenumber')?.['touched'])">
+            <small *ngIf="fg.get('mobilenumber')?.errors?.['required']">
+                Mobile Number is required !
+            </small>
+            <small *ngIf="fg.get('mobilenumber')?.errors?.['pattern']">
+                Mobile number should be valid!
+            </small>
+        </div>
+    </div>
+    <br>
+
+
+
+    <div>
+        <label>Email : </label><br>
+        <input type="text" formControlName="email" placeholder="Enter Email"/>
+        <div *ngIf="fg.get('email')?.['invalid'] &&(fg.get('email')?.['dirty']||fg.get('email')?.['touched'])">
+            <small *ngIf="fg.get('email')?.errors?.['required']">
+                Email is required !
+            </small>
+            <small *ngIf="fg.get('email')?.errors?.['pattern']">
+                Email should be valid!
+            </small>
+        </div>
+    </div>
+    <br>
+
+
+    <div>
+        <label>Date of Birth: </label><br>
+        <input type="text" formControlName="dateOfBirth" placeholder="Enter Date of Birth"/>
+        <div *ngIf="fg.get('dateOfBirth')?.['invalid'] &&(fg.get('dateOfBirth')?.['dirty']||fg.get('dateOfBirth')?.['touched'])">
+            <small *ngIf="fg.get('dateOfBirth')?.errors?.['required']">
+                Date of Birth is required !
+            </small>
+            <small *ngIf="fg.get('dateOfBirth')?.errors?.['retVal']">
+                Date of Birth should be valid!
+            </small>
+        </div>
+    </div>
+    <br>
+
+
+    <div>
+        <label>Salary: </label><br>
+        <input type="text" formControlName="salary" placeholder="Enter Salary"/>
+        <div *ngIf="fg.get('salary')?.['invalid'] &&(fg.get('salary')?.['dirty']||fg.get('salary')?.['touched'])">
+            <small *ngIf="fg.get('salary')?.errors?.['required']">
+                Salary is required !
+            </small>
+            <small *ngIf="fg.get('salary')?.errors?.['salVal']">
+                Invalid Salary!
+            </small>
+        </div>
+    </div>
+    <br>
+
+    <input type="submit" [disabled]="fg.invalid"/>
+
+
+
+</form>
+
